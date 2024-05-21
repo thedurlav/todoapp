@@ -7,7 +7,12 @@ import com.jsp.todo.exception.TaskNotFoundException;
 
 public interface TaskService {
 	public Task findTaskById(int id) throws TaskNotFoundException;
+
 	public Task addNewTask(Task task);
+
 	public List<Task> findAllTask();
+
 	public String deleteTaskById(int id) throws TaskNotFoundException;
+
+	public Task updateTaskById(int id) throws TaskNotFoundException ;
 }

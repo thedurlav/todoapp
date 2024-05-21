@@ -10,4 +10,5 @@ public interface TaskDao {
 	public Task addNew(Task task);
 	public List<Task> findAll();
 	public String deleteTaskById(int id) throws TaskNotFoundException;
+	public Task updateTaskById(int id) throws TaskNotFoundException;
 }

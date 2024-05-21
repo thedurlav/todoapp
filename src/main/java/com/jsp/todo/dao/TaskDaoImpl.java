@@ -42,4 +42,16 @@ public class TaskDaoImpl implements TaskDao {
 		throw new TaskNotFoundException("Invalid Input Id");
 	}
 
+	@Override
+	public Task updateTaskById(int id) throws TaskNotFoundException {
+		Optional<Task> optional = repository.findById(id);
+		if (optional.isPresent()) {
+			Task task = optional.get();
+			task.setCompleted(true);
+			repository.save(task);
+			return task;
+		}
+		throw new TaskNotFoundException("Invalid Input Id");
+	}
+
 }

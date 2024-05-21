@@ -27,6 +27,10 @@ public class TaskServiceImpl implements TaskService {
 	public String deleteTaskById(int id) throws TaskNotFoundException{
 		return dao.deleteTaskById(id);
 	}
+	@Override
+	public Task updateTaskById(int id) throws TaskNotFoundException {
+		return dao.updateTaskById(id);
+	}
 	
 
 	

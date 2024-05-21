@@ -11,7 +11,7 @@ public class Task {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 private String name;
-
+private boolean completed;
 public int getId() {
 	return id;
 }
@@ -24,10 +24,15 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
+public boolean isCompleted() {
+	return completed;
+}
+public void setCompleted(boolean completed) {
+	this.completed = completed;
+}
 @Override
 public String toString() {
-	return "Task [id=" + id + ", name=" + name + "]";
+	return "Task [id=" + id + ", name=" + name + ", completed=" + completed + "]";
 }
-
 
 }

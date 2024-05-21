@@ -14,15 +14,15 @@ import com.jsp.todo.exception.TaskNotFoundException;
 public class TaskDaoImpl implements TaskDao {
 	@Autowired
 	private TaskRepository repository;
-	
+
 	public Task findById(int id) throws TaskNotFoundException {
 		Optional<Task> optional = repository.findById(id);
-		if(optional.isPresent()) {
+		if (optional.isPresent()) {
 			return optional.get();
 		}
-		else throw new TaskNotFoundException("Invalid Input Id");
+		throw new TaskNotFoundException("Invalid Input Id");
 	}
-	
+
 	public Task addNew(Task task) {
 		return repository.save(task);
 	}
@@ -31,5 +31,15 @@ public class TaskDaoImpl implements TaskDao {
 	public List<Task> findAll() {
 		return repository.findAll();
 	}
-	
+
+	@Override
+	public String deleteTaskById(int id) throws TaskNotFoundException {
+		Optional<Task> optional = repository.findById(id);
+		if (optional.isPresent()) {
+			repository.deleteById(id);
+			return "Task Deleted With Id : " + id;
+		}
+		throw new TaskNotFoundException("Invalid Input Id");
+	}
+
 }

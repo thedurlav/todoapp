@@ -23,6 +23,10 @@ public class TaskServiceImpl implements TaskService {
 	public List<Task> findAllTask() {
 		return dao.findAll();
 	}
+	@Override
+	public String deleteTaskById(int id) throws TaskNotFoundException{
+		return dao.deleteTaskById(id);
+	}
 	
 
 	

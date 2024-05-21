@@ -9,4 +9,5 @@ public interface TaskService {
 	public Task findTaskById(int id) throws TaskNotFoundException;
 	public Task addNewTask(Task task);
 	public List<Task> findAllTask();
+	public String deleteTaskById(int id) throws TaskNotFoundException;
 }

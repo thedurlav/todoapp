@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@CrossOrigin(origins = {"${settings.cors_origin}"})
+@CrossOrigin
 @RequestMapping("/todo")
 public class ToDoController {
 	@Autowired
